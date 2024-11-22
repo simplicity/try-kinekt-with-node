@@ -1,16 +1,6 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "outDir": "dist",
-    "declaration": true,
-    "declarationMap": true,
-    "target": "es2016",
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "strict": true
   },
   "include": ["src/**/*.ts"]
 }

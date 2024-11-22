@@ -1,6 +1,5 @@
 {
   "name": "try-kinekt-with-node",
-  "packageManager": "yarn@4.5.1",
   "dependencies": {
     "kinekt": "^0.0.7",
     "zod": "^3.23.8"
