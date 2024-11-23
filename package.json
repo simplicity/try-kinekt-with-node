@@ -1,7 +1,7 @@
 {
   "name": "try-kinekt-with-node",
   "dependencies": {
-    "kinekt": "^0.0.7",
+    "kinekt": "^0.0.8",
     "zod": "^3.23.8"
   },
   "devDependencies": {

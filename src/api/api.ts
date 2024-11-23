@@ -1,6 +1,13 @@
-import { consoleLogger, createPipeline, logger, notFound, serve } from "kinekt";
+import {
+  consoleLogger,
+  createPipeline,
+  createServer,
+  logger,
+  notFound,
+} from "kinekt";
 import { getUser } from "./endpoints/getUser";
 
 const notFoundEndpoint = { pipeline: createPipeline(notFound(), logger()) };
 
-serve([notFoundEndpoint, getUser], consoleLogger);
+const serve = createServer({ logger: consoleLogger });
+serve(notFoundEndpoint, getUser);
