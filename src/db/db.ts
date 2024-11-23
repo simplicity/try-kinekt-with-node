@@ -8,6 +8,6 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 export const db = drizzle(pool, {
   schema,
-  logger: true,
+  logger: false,
   casing: "snake_case",
 });
