@@ -1,5 +1,10 @@
 import { createUser } from "../api/endpoints/users/createUser";
+import { configureBaseUrl } from "./configureBaseUrl";
 
-createUser({ body: { name: "some user", email: "some email" } }).then(
-  console.log
+configureBaseUrl();
+
+const [, , name, email] = process.argv;
+
+createUser({ body: { name, email } }).then((result) =>
+  console.log(JSON.stringify(result, null, "  "))
 );

@@ -18,7 +18,8 @@
   },
   "scripts": {
     "start": "nodemon src/api/api.ts",
-    "getUser": "ts-node src/client/getUser.ts",
-    "createUser": "ts-node src/client/createUser.ts"
+    "get-user": "ts-node src/client/getUser.ts",
+    "get-users": "ts-node src/client/getUsers.ts",
+    "create-user": "ts-node src/client/createUser.ts"
   }
 }
