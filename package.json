@@ -17,7 +17,8 @@
     "typescript": "^5.7.2"
   },
   "scripts": {
-    "start": "nodemon src/api/api.ts",
+    "dev": "nodemon src/api/api.ts",
+    "start": "npx drizzle-kit push && ts-node src/api/api.ts",
     "get-user": "ts-node src/client/getUser.ts",
     "get-users": "ts-node src/client/getUsers.ts",
     "create-user": "ts-node src/client/createUser.ts"
