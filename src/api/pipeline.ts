@@ -30,5 +30,3 @@ export const pipeline = createValidatedEndpointFactory(
     logger()
   )
 );
-
-pipeline.setGlobalClientOptions({ baseUrl: "http://localhost:3000" });
