@@ -14,6 +14,6 @@ const notFoundEndpoint = { pipeline: createPipeline(notFound(), logger()) };
 const serve = createServer({
   logger: consoleLogger,
   port: parseInt(process.env.PORT ?? "3000"),
-  hostname: process.env.HOSTNAME ?? "localhost",
+  hostname: "0.0.0.0",
 });
 serve(notFoundEndpoint, getUser, getUsers, createUser);
