@@ -11,5 +11,9 @@ import { getUsers } from "./endpoints/users/getUsers";
 
 const notFoundEndpoint = { pipeline: createPipeline(notFound(), logger()) };
 
-const serve = createServer({ logger: consoleLogger });
+const serve = createServer({
+  logger: consoleLogger,
+  port: parseInt(process.env.PORT ?? "3000"),
+  hostname: process.env.HOSTNAME ?? "localhost",
+});
 serve(notFoundEndpoint, getUser, getUsers, createUser);

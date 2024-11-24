@@ -3,7 +3,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.36.4",
-    "kinekt": "^0.0.9",
+    "kinekt": "^0.0.10",
     "pg": "^8.13.1",
     "zod": "^3.23.8"
   },

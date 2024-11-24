@@ -2,7 +2,7 @@ import "dotenv/config";
 import { pipeline } from "../api/pipeline";
 
 export function configureBaseUrl() {
-  pipeline.setGlobalClientOptions({
+  pipeline.setGlobalClientParams({
     baseUrl: process.env.BASE_URL ?? "http://localhost:3000",
   });
 }
