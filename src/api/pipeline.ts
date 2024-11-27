@@ -1,6 +1,7 @@
 import {
   authenticate,
   checkAcceptHeader,
+  cors,
   createPipeline,
   createValidatedEndpointFactory,
   deserialize,
@@ -19,6 +20,7 @@ const defaultValidationErrorHandler = (validationErrors: ValidationErrors) => ({
 
 export const pipeline = createValidatedEndpointFactory(
   createPipeline(
+    cors({ origins: "*" }),
     checkAcceptHeader(),
     deserialize(),
     authenticate(),
