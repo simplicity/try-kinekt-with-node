@@ -1,5 +1,7 @@
 import {
   authenticate,
+  AuthenticateCallbackResult,
+  BasePipelineContext,
   checkAcceptHeader,
   cors,
   createPipeline,
@@ -18,12 +20,24 @@ const defaultValidationErrorHandler = (validationErrors: ValidationErrors) => ({
   body: validationErrors,
 });
 
+export type TestSession = { user: { email: string } };
+
+async function getSession<In extends BasePipelineContext>(
+  context: In
+): Promise<AuthenticateCallbackResult<TestSession>> {
+  const authorization = context.request.getHeader("authorization");
+
+  return authorization === null
+    ? { type: "unset" }
+    : { type: "set", session: { user: { email: atob(authorization) } } };
+}
+
 export const pipeline = createValidatedEndpointFactory(
   createPipeline(
     cors({ origins: "*" }),
     checkAcceptHeader(),
     deserialize(),
-    authenticate(),
+    authenticate(getSession),
     withValidation()
   ).split(
     handleValidationErrors(defaultValidationErrorHandler),

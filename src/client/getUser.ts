@@ -1,10 +1,10 @@
 import { getUser } from "../api/endpoints/users/getUser";
-import { configureBaseUrl } from "./configureBaseUrl";
+import { configureClient } from "./configureClient";
 
-configureBaseUrl();
+configureClient();
 
 const [, , id] = process.argv;
 
-getUser({ params: { id: parseInt(id) } }).then((result) =>
-  console.log(JSON.stringify(result, null, "  "))
-);
+getUser({ params: { id: parseInt(id) } })
+  .ok(200)
+  .then((result) => console.log(JSON.stringify(result, null, "  ")));

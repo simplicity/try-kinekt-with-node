@@ -1,6 +1,8 @@
 import { getUsers } from "../api/endpoints/users/getUsers";
-import { configureBaseUrl } from "./configureBaseUrl";
+import { configureClient } from "./configureClient";
 
-configureBaseUrl();
+configureClient();
 
-getUsers({}).then((result) => console.log(JSON.stringify(result, null, "  ")));
+getUsers({})
+  .ok(200)
+  .then((result) => console.log(JSON.stringify(result, null, "  ")));
