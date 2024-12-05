@@ -35,9 +35,9 @@ async function getSession<In extends BasePipelineContext>(
 export const pipeline = createValidatedEndpointFactory(
   createPipeline(
     cors({ origins: "*" }),
+    authenticate(getSession),
     checkAcceptHeader(),
     deserialize(),
-    authenticate(getSession),
     withValidation()
   ).split(
     handleValidationErrors(defaultValidationErrorHandler),
